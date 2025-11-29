@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Mascot xmlns="http://www.group-finity.com/Mascot">
+
+    <BehaviorList>
+
+        <!-- CAÍDA VERTICAL SIN SENSOR -->
+        <Behavior Name="FallStraight" Frequency="100" Hidden="true">
+            <NextBehavior Add="false">
+                <BehaviorReference Name="StandUp" Frequency="100"/>
+            </NextBehavior>
+        </Behavior>
+
+        <!-- USAR CAÍDA RECTAS AL ENCONTRAR UN BORDE -->
+        <Condition Condition="#{mascot.isFalling}">
+            <Behavior Name="FallStraight" Frequency="100"/>
+        </Condition>
+
+        <!-- COMPORTAMIENTOS BÁSICOS -->
+        <Behavior Name="StandUp" Frequency="50"/>
+        <Behavior Name="Walk" Frequency="50"/>
+
+    </BehaviorList>
+
+</Mascot>
